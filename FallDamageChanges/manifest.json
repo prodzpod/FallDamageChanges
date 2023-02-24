@@ -1,0 +1,10 @@
+{
+	"name": "FallDamageChanges",
+	"version_number": "1.0.0",
+	"website_url": "https://github.com/prodzpod/FallDamageChanges",
+	"description": "Configurable fall damage changes.",
+	"dependencies": [
+		"bbepis-BepInExPack-5.4.2103",
+		"RiskofThunder-HookGenPatcher-1.2.3"
+	]
+}
