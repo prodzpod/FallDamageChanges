@@ -1,14 +1,10 @@
 ﻿using BepInEx;
-using BepInEx.Bootstrap;
 using BepInEx.Configuration;
 using BepInEx.Logging;
-using HarmonyLib;
 using RoR2;
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Networking;
 using MonoMod.Cil;
 using Mono.Cecil.Cil;
 
@@ -59,16 +55,15 @@ namespace LimitedInteractables
             IL.RoR2.GlobalEventManager.OnCharacterHitGroundServer += (il) =>
             {
                 ILCursor c = new(il);
-                c.GotoNext(x => x.MatchStloc(5));
+                c.GotoNext(x => x.MatchStloc(4));
                 c.Emit(OpCodes.Ldarg_1);
                 c.EmitDelegate<Func<float, CharacterBody, float>>((orig, self) =>
                 {
                     orig *= FallMultiplier.Value;
                     if (oob.Contains(self)) orig *= OOBMultiplier.Value;
-                    float hp = Mathf.Max(self.healthComponent.health - (orig * self.maxHealth / 60f), FallThreshold.Value * self.maxHealth);
-                    if (oob.Contains(self)) hp = Mathf.Max(hp, OOBThreshold.Value * self.maxHealth);
+                    float hp = MathF.Max(self.healthComponent.health - (orig * self.maxHealth / 60f), FallThreshold.Value * self.maxHealth);
+                    if (oob.Contains(self)) hp = MathF.Max(hp, OOBThreshold.Value * self.maxHealth);
                     return inverseHP(hp, self);
-
                     float inverseHP(float orig, CharacterBody self) { return (self.healthComponent.health - orig) * 60f / self.maxHealth; }
                 });
                 c.GotoNext(x => x.MatchCallOrCallvirt<HealthComponent>(nameof(HealthComponent.TakeDamage)));
