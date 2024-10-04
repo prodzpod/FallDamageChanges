@@ -27,17 +27,44 @@
 	  <Reference Include="MMHOOK_RoR2">
 	    <HintPath>..\..\libs\MMHOOK_RoR2-nstrip.dll</HintPath>
 	  </Reference>
+	  <Reference Include="MSU.Runtime">
+	    <HintPath>..\..\libs\MSU.Runtime-nstrip.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Newtonsoft.Json">
+	    <HintPath>..\..\libs\Newtonsoft.Json-nstrip.dll</HintPath>
+	  </Reference>
+	  <Reference Include="R2API.Addressables">
+	    <HintPath>..\..\libs\R2API.Addressables-nstrip.dll</HintPath>
+	  </Reference>
+	  <Reference Include="R2API.Director">
+	    <HintPath>..\..\libs\R2API.Director-nstrip.dll</HintPath>
+	  </Reference>
+	  <Reference Include="R2API.Prefab">
+	    <HintPath>..\..\libs\R2API.Prefab-nstrip.dll</HintPath>
+	  </Reference>
+	  <Reference Include="R2API.SceneAsset">
+	    <HintPath>..\..\libs\R2API.SceneAsset-nstrip.dll</HintPath>
+	  </Reference>
 	  <Reference Include="RoR2">
 	    <HintPath>..\..\libs\RoR2-nstrip.dll</HintPath>
 	  </Reference>
 	  <Reference Include="RoR2BepInExPack">
 	    <HintPath>..\..\libs\RoR2BepInExPack-nstrip.dll</HintPath>
 	  </Reference>
+	  <Reference Include="Unity.Addressables">
+	    <HintPath>..\..\libs\Unity.Addressables-nstrip.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Unity.ResourceManager">
+	    <HintPath>..\..\libs\Unity.ResourceManager-nstrip.dll</HintPath>
+	  </Reference>
 	  <Reference Include="UnityEngine">
 	    <HintPath>..\..\libs\UnityEngine-nstrip.dll</HintPath>
 	  </Reference>
 	  <Reference Include="UnityEngine.CoreModule">
 	    <HintPath>..\..\libs\UnityEngine.CoreModule-nstrip.dll</HintPath>
+	  </Reference>
+	  <Reference Include="UnityEngine.UI">
+	    <HintPath>..\..\libs\UnityEngine.UI-nstrip.dll</HintPath>
 	  </Reference>
 	</ItemGroup>
 	
