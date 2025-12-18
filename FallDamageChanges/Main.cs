@@ -49,9 +49,9 @@ namespace LimitedInteractables
             OOBIFrames = Config.Bind("General", "Out of Bounds Damage Invulnerability Seconds", 0.5f, "Amount of time invulnerable since tp back. default is commonly modded OSP.");
             CritFall = Config.Bind("General", "Critical Fall Chance", 0f, "The Cracked In Me Awakens...");
 
-            On.RoR2.TeleportHelper.OnTeleport += (orig, obj, pos, vel) =>
+            On.RoR2.TeleportHelper.OnTeleport_GameObject_Vector3_Vector3_Quaternion_bool += (orig, obj, pos, vel, a, b) =>
             {
-                orig(obj, pos, vel);
+                orig(obj, pos, vel, a, b);
                 if (vel.y <= 0) return;
                 CharacterBody body = obj.GetComponent<CharacterBody>();
                 if (!oob.Contains(body)) oob.Add(body);
